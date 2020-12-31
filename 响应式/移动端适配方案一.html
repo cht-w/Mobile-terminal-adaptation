@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 默认适配 iphone5/SE */
+        .top {
+            position: relative;
+        }
+        .top>img {
+            width: 100%;
+            height: auto;
+        }
+        .top>p {
+            position: absolute;
+            left: 50%;
+            top: 33px;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 16px;
+        }
+        .middle , bottom{
+            position: relative;
+            height: 124px;
+        }
+        .main {
+            padding: 4px;
+            border: 1px dashed #0d7efb;
+            border-radius: 5px;
+            display: inline-block;
+            position:absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .main>img:nth-of-type(1) {
+            width: 175px;
+            height: 116px;
+            vertical-align: bottom;
+        }
+        .main>img:nth-of-type(2) {
+            width: 35px;
+            height: 35px;
+            top: 25px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .bottom {
+            margin-top: 14px;
+        }
+        /* 适配 iphone6/7/8 */
+        @media screen and  (min-width: 375px) {
+            .top>p {
+                font-size: 18px;
+                top: 40px;
+            }
+            .middle,bottom {
+                height: 143px;
+            }
+            .main>img:nth-of-type(1) {
+                height: 135px;
+                width: 206px;
+            }
+            .main>img:nth-of-type(2) {
+                width: 42px;
+                height: 42px;
+                top: 30px;
+            }
+            .bottom {
+                margin-top: 17px;
+            }
+        }
+        /* 适配 iphone6/7/8Plus */
+        @media screen and (min-width: 414px) {
+            .top>p {
+                font-size: 20px;
+                margin-top: 43px;
+            }
+            .middle,bottom {
+                height: 160px;
+            }
+            .main {
+                padding: 5px;
+            }
+            .mian>img:nth-of-type(1) {
+                width: 227px;
+                height: 150px;
+            }
+            .mian>img:nth-of-type(2) {
+                width: 45px;
+                height: 45px;
+                margin-top: 35px;
+            }
+            .bottom {
+                margin-top: 19px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 需求:将设计稿在 iphone5/SE  iphone7/7/8  iphone6/7/8Plus中完美适配-->
+    <div class="top">
+        <img src="images/bg.png" alt="">
+        <p>实名认证</p>
+    </div>
+    <div class="middle">
+        <div class="main">
+            <img src="images/back.png" alt="">
+            <img src="images/add.png" alt="">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="main">
+            <img src="images/front.png" alt="">
+            <img src="images/add.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
