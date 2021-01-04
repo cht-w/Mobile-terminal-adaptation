@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面自动跳转</title>
+</head>
+<body>
+<script>
+    // 返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)
+    // let navigatorInfo = window.navigator.userAgent;
+    // console.log(navigatorInfo);
+    /* 下面是使用不同设备打印出来的信息
+    * PC端: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
+    * iphone: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+    * Android: Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Mobile Safari/537.36
+    * */
+
+    // 封装方法：
+
+    function isPC() {
+        let navigatorInfo = window.navigator.userAgent;
+
+        if(/iphone/i.test(navigatorInfo)) {
+            return false;
+        }else if(/android/i.test(navigatorInfo)) {
+            return false;
+        }else {
+            return true;
+        }
+    }
+    if(!isPC()) {
+        // location.href='http://m.jd.com';
+    }
+</script>
+</body>
+</html>
