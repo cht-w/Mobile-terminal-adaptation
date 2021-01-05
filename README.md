@@ -79,3 +79,26 @@
 
 
 document.documentElement.style.fontSize = window.innerWidth / 7.5 + 'px';
+
+适配方案五：设备像素比DPR
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>适配方案五</title>
+    <script type="text/javascript">
+        // console.log(window.devicePixelRatio);  // 物理像素 / css像素
+        // 怎样缩小呢？
+        // console.log(1.0 / window.devicePixelRatio);
+        let scale = 1.0 / window.devicePixelRatio ;
+        let text = `<meta name="viewport" content="width=device-width, initial-scale=${scale}, maximum-scale=${scale} minimum-scale=${scale} user-scalable=${scale}">`
+        document.write(text); // 因为当前的script 就在head标签中所以可以直接用document.write
+        document.documentElement.style.fontSize = window.innerWidth/ 7.5 + 'px';
+    </script>
+</head>
+<body>
+</body>
+</html>
+```
